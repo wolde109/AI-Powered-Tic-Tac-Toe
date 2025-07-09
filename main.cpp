@@ -1,3 +1,7 @@
+// main.cpp: Runs the Tic Tac Toe game. Human (X) vs AI (O) using Minimax algorithm.
+
+
+
 #include <iostream>
 #include "ai.hpp"
 #include "game.hpp"

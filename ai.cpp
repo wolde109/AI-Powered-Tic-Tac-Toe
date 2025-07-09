@@ -1,3 +1,5 @@
+//ai.cpp: Implements AI logic using Minimax to determine optimal moves
+
 #include "game.hpp"
 #include "ai.hpp"
 #include <algorithm>
@@ -26,10 +28,12 @@ int getBestMove(char board[9]) {
 }
 
 int minimax(char board[9], bool isMaximize) {
+    // Base case: check for terminal state
     if (isWinner('O')) return 10;
     if (isWinner('X')) return -10;
     if (isTie()) return 0;
 
+    
     if (isMaximize) {
         int bestScore = numeric_limits<int>::min();
         for (int i = 0; i < 9; ++i) {
