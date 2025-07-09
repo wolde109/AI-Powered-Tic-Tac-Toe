@@ -39,12 +39,11 @@ Make sure you have a C++ compiler (like `g++`).
 g++ main.cpp ai.cpp -o tictactoe
 
 ### Run:
-```bash
 ./tictactoe
 
 
 Sample Gameplay:
-```bash
+
 Tic Tac Toe: You (X) vs AI (O)
  1 | 2 | 3 
  4 | 5 | 6 
