@@ -24,9 +24,9 @@ main.cpp: Game loop and user interface
 
 ai.cpp: AI logic (getBestMove, minimax)
 
-ai.hpp: AI function declarations
+ai.hpp: Declarations for getBestMove() and minimax()
 
-game.hpp: Declarations for isWinner and isTie
+game.hpp: Declarations for isWinner() and isTie()
 
 
 ## 🚀 How to Compile & Run
