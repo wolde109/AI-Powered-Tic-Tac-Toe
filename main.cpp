@@ -8,7 +8,7 @@
 
 using namespace std;
 
-char board[9] = { '1','2','3','4','5','6','7','8','9' };
+char board[9] = { '1','2','3','4','5','6','7','8','9' }; // Represents the 3x3 Tic Tac Toe board using a 1D array
 
 void printBoard() {
     for (int i = 0; i < 9; i++) {
@@ -21,7 +21,7 @@ void printBoard() {
     cout << "\n";
 }
 
-bool isWinner(char player) {
+bool isWinner(const char board[9], char player) {
     // horizontal, vertical, diagonal win conditions
     int wins[8][3] = {
         {0,1,2}, {3,4,5}, {6,7,8},
@@ -37,13 +37,14 @@ bool isWinner(char player) {
      return false;
 }
 
-bool isTie() {
+bool isTie(const char board[9]) {
     for (int i = 0; i < 9; ++i)
         if (board[i] != 'X' && board[i] != 'O') //check to see if spaces on board are filled
             return false; //if not, continue playing
     return true; //stops when full
 }
 
+//Main game loop handling user and AI moves
 int main() {
     cout << "Tic Tac Toe: You (X) vs AI (O)\n";
 
@@ -62,12 +63,12 @@ int main() {
         }
 
         board[move] = 'X';
-        if (isWinner('X')) {
+        if (isWinner(board, 'X')) {
             printBoard();
             cout << "You win!\n";
             break;
         }
-        if (isTie()) {
+        if (isTie(board)) {
             printBoard();
             cout << "It's a tie!\n";
             break;
@@ -77,14 +78,13 @@ int main() {
         int aiMove = getBestMove(board);  
         board[aiMove] = 'O';
         cout << "AI chooses " << (aiMove + 1) << "\n";
-        printBoard();
 
-        if (isWinner('O')) {
+        if (isWinner(board, 'O')) {
             printBoard();
             cout << "AI wins!\n";
             break;
         }
-        if (isTie()) {
+        if (isTie(board)) {
             printBoard();
             cout << "It's a tie!\n";
             break;

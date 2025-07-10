@@ -29,9 +29,9 @@ int getBestMove(char board[9]) {
 
 int minimax(char board[9], bool isMaximize) {
     // Base case: check for terminal state
-    if (isWinner('O')) return 10;
-    if (isWinner('X')) return -10;
-    if (isTie()) return 0;
+    if (isWinner(board, 'O')) return 10;
+    if (isWinner(board, 'X')) return -10;
+    if (isTie(board)) return 0;
 
     
     if (isMaximize) {
